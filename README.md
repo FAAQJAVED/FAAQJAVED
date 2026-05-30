@@ -7,7 +7,7 @@
 <p>
 <a href="mailto:faaqjaved@gmail.com"><img src="https://img.shields.io/badge/faaqjaved%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white"/></a>
 &nbsp;
-<a href="https://https://www.linkedin.com/in/faaqjaved/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/faaqjaved/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
 &nbsp;
 <a href="https://github.com/FAAQJAVED"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/></a>
 &nbsp;
