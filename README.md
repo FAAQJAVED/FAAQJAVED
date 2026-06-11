@@ -22,7 +22,7 @@
 <td align="center"><b>565</b><br/><sub>tests — zero network calls</sub></td>
 <td align="center"><b>20,000+</b><br/><sub>leads generated</sub></td>
 <td align="center"><b>3</b><br/><sub>CI operating systems</sub></td>
-<td align="center"><b>8.7 / 10</b><br/><sub>avg project rating</sub></td>
+<td align="center"><b>9.7 / 10</b><br/><sub>avg project rating</sub></td>
 </tr>
 </table>
 
