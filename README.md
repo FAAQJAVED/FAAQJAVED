@@ -2,241 +2,123 @@
 
 # Afaq Javed
 
-### Python Automation · Web Scraping · B2B Lead Generation
+### GTM Engineer · B2B Outbound Operations
+
+**I run the outbound loop — ICP → sourcing → enrichment → verification → cold email → CRM —<br/>and build the automation underneath it when off-the-shelf tools run out.**
 
 <p>
-<a href="mailto:faaqjaved@gmail.com"><img src="https://img.shields.io/badge/faaqjaved%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white"/></a>
+<a href="https://faaqjaved.github.io/Portfolio/"><img src="https://img.shields.io/badge/Portfolio-Case%20studies%20%26%20process-C2470F?style=for-the-badge"/></a>
 &nbsp;
-<a href="https://www.linkedin.com/in/faaqjaved/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/faaqjaved"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 &nbsp;
-<a href="https://github.com/FAAQJAVED"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/></a>
-&nbsp;
-<img src="https://img.shields.io/badge/Available-Remote%20Freelance-22c55e?style=flat-square"/>
+<a href="mailto:faaqjaved@gmail.com"><img src="https://img.shields.io/badge/Email-2A2520?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
 
-<br/>
-
-<table>
-<tr>
-<td align="center"><b>6</b><br/><sub>interconnected tools</sub></td>
-<td align="center"><b>565</b><br/><sub>tests — zero network calls</sub></td>
-<td align="center"><b>20,000+</b><br/><sub>leads generated</sub></td>
-<td align="center"><b>3</b><br/><sub>CI operating systems</sub></td>
-<td align="center"><b>9.7 / 10</b><br/><sub>avg project rating</sub></td>
-</tr>
-</table>
+<p>
+<img src="https://img.shields.io/badge/Open%20to-GTM%20%2F%20RevOps%20roles-16a34a?style=flat-square"/>
+&nbsp;
+<img src="https://img.shields.io/badge/Remote-UK%20%26%20US%20hours-666666?style=flat-square"/>
+</p>
 
 </div>
 
 ---
 
-## What I build
+## Why these repos exist
 
-A complete, production-grade B2B lead generation system in Python — six interconnected tools that together cover the full pipeline from **discovery → enrichment → CRM-ready output**. Any business directory on the internet. Any city. Any sector.
+I am not a developer who drifted into sales. I ran outbound by hand first — sourcing, qualifying, and sending for a UK property compliance company, alone, for six months. I scraped 150 websites a day by hand and asked to automate it. The answer was no.
 
-This toolkit has processed **20,000+ verified business leads** across the UK property management sector.
+So the tools below are not tutorial projects. Each one removes a bottleneck I personally hit while trying to get a reply rate off the floor.
+
+**The lesson that shaped all of them:** most outbound does not fail on copy or tooling. It fails on the list. I burned five months and 15,000 sends learning that.
+
+---
+
+## Results these tools support
+
+| | |
+|---|---|
+| **50,000+** | B2B contacts sourced and processed |
+| **<1% → ~7%** | reply rate after diagnosing a failing 15,000-email campaign |
+| **1,000 → 70** | prospects qualified down; **70% replied**, 25% of those bought |
+| **576 leads / 49 min** | two sources, deduplicated, delivered unattended |
+| **22,700 → 9,567** | messy client list cleaned, deduplicated and ICP-qualified |
+
+Full teardowns — including what broke and how it was fixed — are on the
+**[portfolio](https://faaqjaved.github.io/Portfolio/)**.
 
 ---
 
 ## The pipeline
 
 ```
-  DISCOVERY    find companies from any source
-  ---------------------------------------------------------------
-  +-  Google Maps Scraper       Maps listings + email enrichment
-  +-  LeadHunter Pro            4 search engines, HOT/WARM/COLD
-  +-  Trustpilot Scraper        reputation-filtered businesses
-  +-  JSON Directory Harvester  any JSON API, config-only
-  +-  HTML Directory Scrapers   any HTML or WordPress directory
+DISCOVERY  ─────────────────────────────────────────────
+  Google Maps Scraper        Maps listings + enrichment
+  LeadHunter Pro             4 engines, HOT/WARM/COLD
+  Trustpilot Scraper         reputation-filtered
+  JSON Directory Harvester   any JSON API, config only
+  HTML Directory Scrapers    any HTML / WordPress AJAX
 
-  ENRICHMENT   add verified contact details
-  ---------------------------------------------------------------
-  +-  Email & Phone Enricher    HTTP + Playwright, CF bypass
+ENRICHMENT  ────────────────────────────────────────────
+  Email & Phone Enricher     HTTP pass → Playwright pass
 
-  OUTPUT       consistent schema across all 6 tools
-  ---------------------------------------------------------------
-  +-  3-sheet Excel  ( Data  /  Flagged  /  Summary )
-      deduplicated  *  validated  *  CRM-importable
+VERIFICATION  ──────────────────────────────────────────
+  VERIFIED     mailbox confirmed  →  full volume
+  CATCH-ALL    unconfirmable      →  separate domain, low volume
+  INVALID      no MX / role-based →  dropped
+
+OUTPUT  ────────────────────────────────────────────────
+  One row per contact, 16-field schema, CRM-importable
 ```
 
-> A client who needs 10,000 verified business contacts — starting from zero — gets back a single deduplicated, formatted Excel file drawn from multiple sources and ready for CRM import.
+A client needing 10,000 verified contacts from zero gets back one deduplicated file, drawn from several sources, ready for HubSpot or Zoho.
 
 ---
 
-## Projects
+## Tools
 
-<table>
-<tr>
-<td width="50%" valign="top">
+| Repository | Tests | What it does |
+|---|---|---|
+| **[Google Maps Business Scraper](https://github.com/FAAQJAVED/Google-Maps-Business-Scraper)** | 122 | Playwright scraper with concurrent email enrichment, Cloudflare decoding, crash-safe checkpoint/resume |
+| **[HTML Directory Scrapers](https://github.com/FAAQJAVED/html-directory-scrapers)** | 184 | Dual-engine: CSS-selector scraper for any paginated directory, plus a WordPress AJAX engine with nonce lifecycle handling |
+| **[Trustpilot Business Scraper](https://github.com/FAAQJAVED/Trustpilot-Business-Scraper)** | 121 | Reputation-filtered listings with ratings and review counts — established companies only |
+| **[JSON Directory Harvester](https://github.com/FAAQJAVED/json-directory-harvester)** | 102 | Config-only retargeting for any JSON API directory. New source = new YAML, no code |
+| **[Email & Phone Enrichment Tool](https://github.com/FAAQJAVED/Email-Phone-Number-Enrichment-Tool)** | 88 | Two-pass crawler — fast HTTP, Playwright fallback for JS pages. E.164 normalisation |
+| **[LeadHunter Pro](https://github.com/FAAQJAVED/Leadhunter_Pro)** | 78 | Bing, DuckDuckGo, Mojeek and Yahoo in parallel, with configurable keyword scoring |
 
-### 🗺️ [Google Maps Business Scraper](https://github.com/FAAQJAVED/Google-Maps-Business-Scraper)
+**695 automated tests · zero network calls in any test · CI on Ubuntu, Windows and macOS · all MIT-licensed**
 
-![Version](https://img.shields.io/badge/v2.0.0-blue?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-122-brightgreen?style=flat-square)
-![CI](https://img.shields.io/badge/CI-Ubuntu%20%7C%20Windows-lightgrey?style=flat-square&logo=github-actions)
-
-Playwright-driven Maps scraper with **concurrent email enrichment**, Cloudflare XOR decode, and atomic checkpoint/resume. Runs survive interruption and pick up exactly where they left off.
-
-`Playwright` `ThreadPoolExecutor` `openpyxl` `Cloudflare bypass`
-
-</td>
-<td width="50%" valign="top">
-
-### 📧 [Email & Phone Enrichment Tool](https://github.com/FAAQJAVED/Email-Phone-Number-Enrichment-Tool)
-
-![Version](https://img.shields.io/badge/v1.0.0-blue?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-78-brightgreen?style=flat-square)
-![CI](https://img.shields.io/badge/CI-Ubuntu%20%7C%20Windows%20%7C%20macOS-lightgrey?style=flat-square&logo=github-actions)
-
-**Two-pass crawler**: fast HTTP first, Playwright fallback for JS-rendered pages. E.164 phone normalisation. Works standalone or as the enrichment layer for any discovery tool.
-
-`httpx` `Playwright` `E.164 normalisation` `Cloudflare bypass`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🔍 [LeadHunter Pro](https://github.com/FAAQJAVED/Leadhunter_Pro)
-
-![Version](https://img.shields.io/badge/v1.1.0-blue?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-72-brightgreen?style=flat-square)
-![CI](https://img.shields.io/badge/CI-Ubuntu-lightgrey?style=flat-square&logo=github-actions)
-
-4-engine parallel search (Bing, DuckDuckGo, Mojeek, Yahoo) via **abstract base class architecture**. Configurable HOT/WARM/COLD/NOISE keyword scoring. Domain deduplication before enrichment.
-
-`Abstract base classes` `4-engine orchestration` `YAML scoring config`
-
-</td>
-<td width="50%" valign="top">
-
-### ⭐ [Trustpilot Business Scraper](https://github.com/FAAQJAVED/trustpilot-business-scraper)
-
-![Version](https://img.shields.io/badge/v1.2.0-blue?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-121-brightgreen?style=flat-square)
-![CI](https://img.shields.io/badge/CI-Ubuntu%20%7C%20Windows-lightgrey?style=flat-square&logo=github-actions)
-
-Selenium + Chrome scraper for Trustpilot listings — name, contact, website, **rating, review count**. Targets only established, active companies. Anti-scraping evasion built in.
-
-`Selenium` `Chrome` `reputation filtering` `anti-bot evasion`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🗂️ [JSON Directory Harvester](https://github.com/FAAQJAVED/json-directory-harvester)
-
-![Version](https://img.shields.io/badge/v1.0.0-blue?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-79-brightgreen?style=flat-square)
-![CI](https://img.shields.io/badge/CI-Ubuntu-lightgrey?style=flat-square&logo=github-actions)
-
-**Config-only retargeting** — no code changes to point at a new JSON API directory. Two pagination modes, dot-path navigation, geographic bounding-box filter, two-pass deduplication. Best-documented codebase in the toolkit.
-
-`Generic pipeline` `dot-path JSON` `geo filtering` `pure functions`
-
-</td>
-<td width="50%" valign="top">
-
-### 🏗️ [HTML Directory Scrapers](https://github.com/FAAQJAVED/html-directory-scrapers)
-
-![Version](https://img.shields.io/badge/v1.1.0-blue?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-93-brightgreen?style=flat-square)
-![CI](https://img.shields.io/badge/CI-Ubuntu-lightgrey?style=flat-square&logo=github-actions)
-
-**Dual-engine toolkit**: Engine 1 for any paginated HTML via CSS selectors; Engine 2 for WordPress AJAX — automatic nonce extraction, mid-run nonce refresh, manual gzip/zlib decompression. Most technically complex codebase in portfolio.
-
-`CSS selectors` `WordPress AJAX` `nonce lifecycle` `ThreadPoolExecutor`
-
-</td>
-</tr>
-</table>
+There is a seventh, private: an orchestration layer that runs these together — plugin system, SQLite run history, FastAPI control surface. One command returns a finished, deduplicated sheet. That one stays closed because it is the thing that turns a six-hour delivery into 49 minutes.
 
 ---
 
-## Stack
+## What I work with
 
-### Languages & runtime
+**GTM & outbound**
+ICP definition · trigger-based targeting · enrichment waterfalls · deliverability (SPF/DKIM/DMARC, warmup, dedicated subdomains) · sequencing and A/B testing · reply-rate diagnosis · CRM handoff design
 
-<p>
-<img src="https://img.shields.io/badge/Python%203.9–3.12-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Type%20hints-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white"/>
-</p>
+**Platforms**
+Apollo.io · LinkedIn Sales Navigator · Clay · Instantly · HubSpot · Zoho · Airtable · Google Sheets
 
-### Scraping & automation
+**Build**
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 
-<p>
-<img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white"/>
-<img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white"/>
-<img src="https://img.shields.io/badge/httpx-009688?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Requests-FF6B35?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/BeautifulSoup4-59666C?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/lxml-2980B9?style=for-the-badge&logo=python&logoColor=white"/>
-</p>
+**Going deeper on:** Clay to certification · n8n · signal-based targeting · Salesforce
 
-> **Specialist techniques**: Cloudflare XOR email decoding · WordPress `admin-ajax.php` nonce lifecycle · manual gzip/zlib decompression · SMTP RCPT email verification · anti-bot fingerprint evasion
-
-### Data engineering
-
-<p>
-<img src="https://img.shields.io/badge/openpyxl-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
-<img src="https://img.shields.io/badge/pyyaml-CB171E?style=for-the-badge&logo=yaml&logoColor=white"/>
-<img src="https://img.shields.io/badge/dnspython-003366?style=for-the-badge&logo=python&logoColor=white"/>
-</p>
-
-> **Techniques**: two-pass deduplication (ID-based + normalised name+postcode) · E.164 phone normalisation · geographic bounding-box filtering · HOT/WARM/COLD/NOISE keyword scoring · configurable record validation
-
-### Concurrency & resilience
-
-<p>
-<img src="https://img.shields.io/badge/ThreadPoolExecutor-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/tqdm-FFC107?style=for-the-badge&logo=python&logoColor=white"/>
-</p>
-
-> **Patterns**: exponential-backoff retry · circuit-breaker (N failures → auto-pause) · atomic file ops (`.tmp → os.replace()`) · crash-safe checkpoint/resume · cross-platform keyboard listener · `command.txt` headless controls · `tqdm`-safe log routing
-
-### Infrastructure & DevOps
-
-<p>
-<img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/>
-<img src="https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white"/>
-<img src="https://img.shields.io/badge/pytest--cov-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white"/>
-<img src="https://img.shields.io/badge/ruff-D7FF64?style=for-the-badge&logo=ruff&logoColor=black"/>
-<img src="https://img.shields.io/badge/flake8-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/pyproject.toml-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/python--dotenv-ECD53F?style=for-the-badge&logo=dotenv&logoColor=black"/>
-</p>
-
-> **CI matrix**: Ubuntu · Windows · macOS across Python 3.9 – 3.12
+> Salesforce appears in roughly 45% of GTM engineering postings and I have not worked in it. Listing it as a skill would be a lie you would find out about in week one, so it is listed here instead.
 
 ---
 
-## What I'm learning next
+## Currently
 
-<p>
-<img src="https://img.shields.io/badge/asyncio%20%2F%20aiohttp-3776AB?style=flat-square&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
-<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
-<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white"/>
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
-<img src="https://img.shields.io/badge/Proxy%20Rotation-555555?style=flat-square&logo=python&logoColor=white"/>
-</p>
+Open to **GTM Engineer / RevOps** roles and freelance outbound work. Remote, UK and US hours.
 
-Each of these directly extends what the current toolkit can do — async throughput, database output, cloud-deployable APIs, visual dashboards.
+If your outbound is not working, the fastest thing I can do is tell you whether it is a list problem, a deliverability problem or a targeting problem — usually within one conversation.
 
----
-
-## Specialisation
-
-B2B sales market , Lead Generation and CRM. Property management, Sales, Lettings, and professional services directories.
-
-Postcode validation, geographic filtering, and UK, US, and EU sector categorisation are **built into the architecture** — not retrofitted.
-
----
-
-## Contact
-
-Open to remote freelance projects — scraping pipelines, lead generation, data extraction, automation.
-
-📧 **faaqjaved@gmail.com** &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/afaq-javed-460880249) &nbsp;·&nbsp; [GitHub](https://github.com/FAAQJAVED)
+**[faaqjaved@gmail.com](mailto:faaqjaved@gmail.com)** · **[Portfolio](https://faaqjaved.github.io/Portfolio/)** · **[LinkedIn](https://www.linkedin.com/in/faaqjaved)**
